@@ -10,6 +10,7 @@ export const baseStyles = {
     alignItems: "center",
   },
 }
+
 export const styles = {
   ...baseStyles,
   flexCenterColumn: {
