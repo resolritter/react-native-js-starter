@@ -1,3 +1,7 @@
+import { name as appName } from "../app.json"
+
+export { appName }
+
 export const routes = {
   home: "home",
   example: "example",
