@@ -3,9 +3,9 @@ index 8c04756..38b689f 100644
 --- a/node_modules/metro/src/lib/polyfills/require.js
 +++ b/node_modules/metro/src/lib/polyfills/require.js
 @@ -103,7 +103,7 @@ function metroRequire(moduleId) {
- 
+
    const moduleIdReallyIsNumber = moduleId;
- 
+
 -  if (__DEV__) {
 +  if (false) {
      const initializingIndex = initializingModuleIds.indexOf(
