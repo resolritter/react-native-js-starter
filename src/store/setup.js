@@ -1,10 +1,10 @@
+import { configureStore } from "@reduxjs/toolkit"
+import { combineReducers } from "redux"
+import { persistReducer, persistStore } from "redux-persist"
 import FilesystemStorage from "redux-persist-filesystem-storage"
 import RNFetchBlob from "rn-fetch-blob"
-import { combineReducers } from "redux"
-import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit"
-import { persistStore, persistReducer } from "redux-persist"
-
 import { appName } from "src/constants"
+
 import counter from "./counter"
 
 // Saving to the SDCard won't work with just this due to lacking permissions on
@@ -32,7 +32,7 @@ export default function (initialState) {
   // Declare after which actions should the store automatically be flushed to
   // the filesystem.
   const persistAfter = [counter.actions.increase]
-  const automaticPersistenceMiddleware = (api) => (next) => (action) => {
+  const automaticPersistenceMiddleware = () => (next) => (action) => {
     const result = next(action)
     if (persistAfter.some((actionCreator) => actionCreator.match(action))) {
       persistorRef.current.flush()

@@ -1,7 +1,6 @@
 import React from "react"
-import { View, Text, Button } from "react-native"
-
-import { styles, routes } from "src/constants.js"
+import { Button, Text, View } from "react-native"
+import { routes, styles } from "src/constants.js"
 
 const Home = function ({ navigation }) {
   return (
